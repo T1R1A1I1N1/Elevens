@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Card
+comment0.text=\r\n\ Card.java\r\n\r\n\ <code>Card</code>\ represents\ a\ playing\ card.\r\n
+comment1.params=rank\ suit\ pointValue
+comment1.target=Card(java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ suit()
+comment3.params=
+comment3.target=java.lang.String\ rank()
+comment4.params=
+comment4.target=int\ pointValue()
+comment5.params=c
+comment5.target=boolean\ matches(Card)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

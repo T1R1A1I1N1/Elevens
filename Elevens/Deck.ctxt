@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Deck
+comment1.params=ranks\ suits\ values
+comment1.target=Deck(java.lang.String[],\ java.lang.String[],\ int[])
+comment2.params=
+comment2.target=boolean\ isEmpty()
+comment3.params=
+comment3.target=int\ size()
+comment4.params=
+comment4.target=void\ shuffle()
+comment4.text=\r\n\ Randomly\ permute\ the\ given\ collection\ of\ cards\r\n\ and\ reset\ the\ size\ to\ represent\ the\ entire\ deck.\r\n
+comment5.params=
+comment5.target=Card\ deal()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Generates\ and\ returns\ a\ string\ representation\ of\ this\ deck.\r\n\ @return\ a\ string\ representation\ of\ this\ deck.\r\n
+numComments=7
