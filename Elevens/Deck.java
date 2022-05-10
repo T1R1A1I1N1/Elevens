@@ -1,7 +1,11 @@
 import java.util.List;
 import java.util.ArrayList;
 
-
+/**
+ * The Deck class represents a shuffled deck of cards.
+ * It provides several operations including
+ *      initialize, shuffle, deal, and check if empty.
+ */
 public class Deck {
 
 	/**
@@ -17,25 +21,38 @@ public class Deck {
 	private int size;
 
 
-	
+	/**
+	 * Creates a new <code>Deck</code> instance.<BR>
+	 * It pairs each element of ranks with each element of suits,
+	 * and produces one of the corresponding card.
+	 * @param ranks is an array containing all of the card ranks.
+	 * @param suits is an array containing all of the card suits.
+	 * @param values is an array containing all of the card point values.
+	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-	        cards = new ArrayList<Card>();
-	        for(String s: suits){
-		  for(int i = 0; i < ranks.length; i++){
-		    cards.add(new Card(ranks[i],s,values[i]));
-		  }
-                }
-                size = cards.size();
-                shuffle();
+		cards = new ArrayList<Card>();
+		for (int j = 0; j < ranks.length; j++) {
+			for (String suitString : suits) {
+				cards.add(new Card(ranks[j], suitString, values[j]));
+			}
+		}
+		size = cards.size();
+		shuffle();
 	}
 
 
-	
+	/**
+	 * Determines if this deck is empty (no undealt cards).
+	 * @return true if this deck is empty, false otherwise.
+	 */
 	public boolean isEmpty() {
-		return(size == 0);
+		return size == 0;
 	}
 
-	
+	/**
+	 * Accesses the number of undealt cards in this deck.
+	 * @return the number of undealt cards in this deck.
+	 */
 	public int size() {
 		return size;
 	}
@@ -45,13 +62,29 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int k = cards.size() - 1; k > 0; k--) {
+			int howMany = k + 1;
+			int start = 0;
+			int randPos = (int) (Math.random() * howMany) + start;
+			Card temp = cards.get(k);
+			cards.set(k, cards.get(randPos));
+			cards.set(randPos, temp);
+		}
+		size = cards.size();
 	}
 
-	
+	/**
+	 * Deals a card from this deck.
+	 * @return the card just dealt, or null if all the cards have been
+	 *         previously dealt.
+	 */
 	public Card deal() {
+		if (isEmpty()) {
+			return null;
+		}
 		size--;
-		return(cards.get(size));
+		Card c = cards.get(size);
+		return c;
 	}
 
 	/**
